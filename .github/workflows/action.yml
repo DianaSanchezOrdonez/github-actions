@@ -1,0 +1,17 @@
+name: Execute Script
+
+on:
+  push:
+    branches:
+      - main # Change this to the branch where you want to trigger the action
+
+jobs:
+  execute-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run index.js
+        run: node index.js
