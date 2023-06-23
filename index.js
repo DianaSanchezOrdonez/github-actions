@@ -60,14 +60,14 @@ async function updateFile() {
       `GET /repos/DianaSanchezOrdonez/github-actions/contents/public/.well-known/apple-app-site-association`
     );
     const { path, sha, content, encoding } = res.data;
-    console.log("typeof content", typeof content);
+
     const rawContent = Buffer.from(content, encoding).toString();
 
     const rawContentFormat = JSON.parse(rawContent);
 
     // validate the keys
-    const isSameKeys =
-      Object.keys(data).length === Object.keys(rawContentFormat).length;
+    // const isSameKeys =
+    //   Object.keys(data).length === Object.keys(rawContentFormat).length;
 
     // validate if data has more elements in "applinks.details"
     if (
