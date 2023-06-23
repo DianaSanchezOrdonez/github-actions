@@ -1,0 +1,13 @@
+{
+  "name": "github-actions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DianaSanchezOrdonez/github-actions.git",
+  "author": "<dianaordonez1998@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/core": "^4.2.4",
+    "dotenv": "^16.3.1",
+    "nodemon": "^2.0.22"
+  }
+}
