@@ -36,18 +36,35 @@ const data = {
           },
         ],
       },
+      {
+        appIDs: [
+          "R2SA8LSU5H.co.crmb.ios-cl9ocir0s02150ns6wog2uay8-tropical-sno",
+        ],
+        components: [
+          {
+            "/": "/tropical-sno/*",
+            comment: "Matches tropical sno qr code",
+          },
+          {
+            "/": "/5/*",
+            comment: "Matches tropical sno app clip",
+          },
+        ],
+      },
     ],
   },
   webcredentials: {
     apps: [
       "R2SA8LSU5H.co.crmb.ios-cl6vlg26q00680ns6gt2lwh31-dippys",
       "R2SA8LSU5H.co.crmb.app.development",
+      "R2SA8LSU5H.co.crmb.ios-cl6dx7o1x00290ns65yg3761v-lanis-hawaiian-style-shave-ice",
     ],
   },
   appclips: {
     apps: [
       "R2SA8LSU5H.co.crmb.ios-cl6vlg26q00680ns6gt2lwh31-dippys.Clip",
       "R2SA8LSU5H.co.crmb.app.development.Clip",
+      "R2SA8LSU5H.co.crmb.ios-cl6dx7o1x00290ns65yg3761v-lanis-hawaiian-style-shave-ice.Clip",
     ],
   },
 };
@@ -71,7 +88,8 @@ async function updateFile() {
 
     // validate if data has more elements in "applinks.details"
     if (
-      data.applinks.details.length > rawContentFormat.applinks.details.length
+      data.applinks.details.length > rawContentFormat.applinks.details.length ||
+      data.applinks.details.length < rawContentFormat.applinks.details.length
     ) {
       return commitFile(path, sha, encoding, JSON.stringify(data));
     }
